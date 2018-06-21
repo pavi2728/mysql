@@ -1,0 +1,38 @@
+create database company;
+use company;
+create table Employee (empid varchar(5),name char(10),place char(10),primary key(empid));
+create table Post (eid varchar(5) not null unique,designation char(10) not null,department char(10) , foreign key(eid) references Employee(empid));
+create table student (id varchar(10), name char(20) not null,dept char(5),primary key(id));
+insert into student values ('15euit088','pavithra','it');
+insert into student values ('15euit084','nj','it');
+select count(dept) from student;
+select count(*) from student;
+insert into student values ('15euit085','bee','ece');
+select  distinct (dept) from student;
+update student set name='pavithrar' where id='15euit088';
+
+delete from student where id='15euit085';
+select * from student;
+alter table student add dob date;         
+desc student;
+alter table student drop dept;
+desc student;
+insert into Employee values('e001','kia','cbe');
+truncate table student;
+insert into student values('15euit055','leana','1997-05-12');
+
+select * from student;
+
+truncate table student;
+insert into student values('15euit057','veera','1997-11-11');
+select * from student;
+drop table student;
+
+
+
+insert into Employee values('e10','felicity','chennai');
+insert into Employee values('e05','roger','cbe');
+select name from Employee order by empid asc;
+
+select count(name) from Employee group by place='cbe';
+

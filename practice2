@@ -1,0 +1,42 @@
+create database pr88;
+use pr88;
+create table Student (id numeric not null,name char(10) not null,age numeric not null,primary key(id));
+insert into Student values (1,'Vinodini',25);
+insert into Student values (2,'Banu',27);
+insert into Student values (3,'Koushik',23);
+insert into Student values (4,'Praveen',25);
+insert into Student values (5,'Kamal',22);
+insert into Student values (6,'Malini',24);
+insert into Student values (7,'Ramesh',32);
+select * from Student where age=32 or age=22;
+select * from Student where name like '%am%';
+create table Details (id numeric not null, dept char(5) not null, cgpa numeric);
+insert into Details values(1,'ece',8);
+insert into Details values(2,'it',7);
+insert into Details values(3,'cse',9);
+insert into Details values(11,'mct',6);
+select S.name,D.dept from Student S,Details D where S.id=D.id;
+select S.name,D.dept from Student S left join Details D on S.id=D.id;
+select S.name,D.dept from Student S right join Details D on S.id=D.id;
+
+select * from Details;
+select lower('PAVIthra is a cOOL gIRl');
+select upper('pokemon go is the BEST game ever');
+select mid('legendary pokemon are like Gods',6,12) as bigstring;
+
+select concat(S.name ,D.dept) as info from Student S,Details D;
+select length(name) from Student as info; 
+select ucase(name) from Student as info;
+select ltrim(name) as info from Student;
+select mid(name,1,2) as full_name from Student;
+
+select reverse(name) as info from Student;
+select curtime();
+ create table Employee (id int not null auto_increment,name char(10) not null,age numeric,primary key(id));
+ insert into Employee (name,age) values ('Fleur',23);
+  insert into Employee (name,age) values ('Harry',24);
+  
+  alter table Employee auto_increment=200;
+   insert into Employee (name,age) values ('Sienna',22);
+    insert into Employee (name,age) values ('Mason',21);
+    select * from Employee;

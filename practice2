@@ -40,3 +40,7 @@ select curtime();
    insert into Employee (name,age) values ('Sienna',22);
     insert into Employee (name,age) values ('Mason',21);
     select * from Employee;
+create view v1 as select * from Details;
+ select * from v1;
+ rename table Details to Guvi;
+ create index i1 on Guvi (id,dept,cgpa);
